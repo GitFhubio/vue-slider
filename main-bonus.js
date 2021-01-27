@@ -57,7 +57,7 @@ created() { // più corretto created
 
       loop: function(){
         this.interval=setInterval(() => {
-        this.next()}, 3000);
+        this.next();}, 3000);
       },
 
       stopLoop:function(){
@@ -70,3 +70,6 @@ created() { // più corretto created
 // differenza mounted created?
 // mounted (): viene eseguito prima di creare il componente
 // created (): viene eseguito dopo aver creato il componente per il rendering
+
+// nota:avrebbe funzionato anche senza inizializzare interval,mettendo
+// (senza this. e senza var) interval=setInterval in loop... e clearInterval(interval) in stop loop
