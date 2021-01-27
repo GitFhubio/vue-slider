@@ -35,7 +35,10 @@ const app = new Vue( {
        if (this.indexPhoto<0){
          this.indexPhoto=this.imgs.length-1;
        }
-   }
+     },
+       Active: function(index){
+          this.indexPhoto=index;
+       }
 
 
   }
