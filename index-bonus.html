@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Slider</title>
+    </head>
+    <body>
+      <div id="root">
+        <div class="container">
+            <div class="slider-wrapper">
+                <div class="prev" @click="prev">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="images">
+                    <img :src="imgs[indexPhoto].url" :alt="imgs[indexPhoto].alt">
+                </div>
+                <div class="next" @click="next">
+                    <i class="fas fa-angle-right"></i>
+                </div>
+                <div class="nav">
+                    <i v-for="(img,index) in imgs" class="fas fa-circle" :class="classeActive(index,indexPhoto)" @click='Active(index)'></i>
+                </div>
+            </div>
+        </div>
+       </div>
+        <script src="main-bonus.js"></script>
+    </body>
+</html>
