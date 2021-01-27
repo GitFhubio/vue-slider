@@ -29,7 +29,7 @@ const app = new Vue( {
     interval:0
   }
   ,
-mounted() {
+created() { // più corretto created
     this.loop();
   },
   methods:{
@@ -48,7 +48,7 @@ mounted() {
        Active: function(index){
           this.indexPhoto=index;
        },
-  
+
        classeActive: function(index,indexPhoto) {
          if(index==indexPhoto){
            return 'active';
@@ -66,3 +66,7 @@ mounted() {
       }
 
 });
+
+// differenza mounted created?
+// mounted (): viene eseguito prima di creare il componente
+// created (): viene eseguito dopo aver creato il componente per il rendering
