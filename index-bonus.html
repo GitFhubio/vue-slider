@@ -21,9 +21,14 @@
                 <div class="next" @click="next">
                     <i class="fas fa-angle-right"></i>
                 </div>
+                <!-- versione con if che puo stare dentro methods o anche data -->
                 <div class="nav">
-                    <i v-for="(img,index) in imgs" class="fas fa-circle" :class="classeActive(index,indexPhoto)" @click='Active(index)'></i>
+                    <i v-for="(img,index) in imgs" class="fas fa-circle" :class="'classeActive(index,indexPhoto)'" @click='Active(index)'></i>
                 </div>
+                <!-- versione base oggetto-->
+                <!-- <div class="nav">
+                    <i v-for="(img,index) in imgs" class="fas fa-circle" :class="{'active': (index==indexPhoto)}" @click='Active(index)'></i>
+                </div> -->
             </div>
         </div>
        </div>
