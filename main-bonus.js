@@ -21,13 +21,17 @@ const app = new Vue( {
     }],
     indexPhoto: 0
     ,
-    classeActive: (index,indexPhoto)=> {
-      if(index==indexPhoto){
-        return 'active';
-      }
-    }
+    // classeActive: (index,indexPhoto)=> {
+    //   if(index==indexPhoto){
+    //     return 'active';
+    //   }
+    // },
+    interval:0
   }
   ,
+mounted() {
+    this.loop();
+  },
   methods:{
    next: function(){
      this.indexPhoto+=1;
@@ -43,12 +47,22 @@ const app = new Vue( {
      },
        Active: function(index){
           this.indexPhoto=index;
-       }
-       // ,
-       // classeActive: function(index,indexPhoto) {
-       //   if(index==indexPhoto){
-       //     return 'active';
-       //   }
-       //  }
+       },
+  
+       classeActive: function(index,indexPhoto) {
+         if(index==indexPhoto){
+           return 'active';
+         }
+       },
+
+      loop: function(){
+        this.interval=setInterval(() => {
+        this.next()}, 3000);
+      },
+
+      stopLoop:function(){
+         clearInterval=this.interval;
       }
+      }
+
 });
