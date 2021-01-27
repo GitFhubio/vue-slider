@@ -61,7 +61,7 @@ created() { // più corretto created
       },
 
       stopLoop:function(){
-         clearInterval=this.interval;
+         clearInterval(this.interval);
       }
       }
 
